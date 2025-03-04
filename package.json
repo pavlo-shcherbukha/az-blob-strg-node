@@ -9,6 +9,7 @@
   "author": "psh",
   "license": "ISC",
   "dependencies": {
-    "node-red": "^4.0.9"
+    "node-red": "^4.0.9",
+    "shazblob": "file:shazblob"
   }
 }

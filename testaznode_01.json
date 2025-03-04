@@ -1,0 +1,230 @@
+[
+    {
+        "id": "788f38f7942736d1",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a0628b6571fc9278",
+        "type": "shazbstorage-config",
+        "configname": "azcfg1",
+        "azure_tenant_id": "",
+        "azure_client_id": "",
+        "azure_client_secret": "",
+        "azure_storage_account_name": ""
+    },
+    {
+        "id": "2f977625d33d3d9d",
+        "type": "shazbstorage-upload",
+        "z": "788f38f7942736d1",
+        "name": "UploadAtAzBlobStorage",
+        "configname": "a0628b6571fc9278",
+        "containerName": "",
+        "blobName": "",
+        "x": 830,
+        "y": 180,
+        "wires": [
+            [
+                "5ee8d2a355cd0d1d"
+            ]
+        ]
+    },
+    {
+        "id": "083d24a70685558b",
+        "type": "file in",
+        "z": "788f38f7942736d1",
+        "name": "FileReader",
+        "filename": "payload.Filename",
+        "filenameType": "msg",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 530,
+        "y": 180,
+        "wires": [
+            [
+                "d00db92bc6d382cf",
+                "2f977625d33d3d9d"
+            ]
+        ]
+    },
+    {
+        "id": "5ee8d2a355cd0d1d",
+        "type": "debug",
+        "z": "788f38f7942736d1",
+        "name": "UploadResult",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d00db92bc6d382cf",
+        "type": "debug",
+        "z": "788f38f7942736d1",
+        "name": "FileReadResult",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "44a02daaac080e74",
+        "type": "inject",
+        "z": "788f38f7942736d1",
+        "name": "Upload-pic-test-01.jpg",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "containerName",
+                "v": "images",
+                "vt": "str"
+            },
+            {
+                "p": "blobName",
+                "v": "pic-test-01-01.jpg",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Filename\":\"./shazblob/examp_image/pic-test-01.jpg\"}",
+        "payloadType": "json",
+        "x": 300,
+        "y": 180,
+        "wires": [
+            [
+                "083d24a70685558b"
+            ]
+        ]
+    },
+    {
+        "id": "c14e727c94d358e4",
+        "type": "inject",
+        "z": "788f38f7942736d1",
+        "name": "Upload-pic-test-03.jpg",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "containerName",
+                "v": "images",
+                "vt": "str"
+            },
+            {
+                "p": "blobName",
+                "v": "pic-test-03-01.jpg",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Filename\":\"./shazblob/examp_image/pic-test-03.jpg\"}",
+        "payloadType": "json",
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "083d24a70685558b"
+            ]
+        ]
+    },
+    {
+        "id": "2f57579c0733816c",
+        "type": "inject",
+        "z": "788f38f7942736d1",
+        "name": "Upload-pic-test-02.jpg",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "containerName",
+                "v": "images",
+                "vt": "str"
+            },
+            {
+                "p": "blobName",
+                "v": "pic-test-02-01.jpg",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Filename\":\"./shazblob/examp_image/pic-test-02.jpg\"}",
+        "payloadType": "json",
+        "x": 300,
+        "y": 240,
+        "wires": [
+            [
+                "083d24a70685558b"
+            ]
+        ]
+    },
+    {
+        "id": "e04b900068bf007b",
+        "type": "inject",
+        "z": "788f38f7942736d1",
+        "name": "Upload-pic-test-04.jpg",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "containerName",
+                "v": "images",
+                "vt": "str"
+            },
+            {
+                "p": "blobName",
+                "v": "pic-test-04-01.jpg",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Filename\":\"./shazblob/examp_image/pic-test-04.jpg\"}",
+        "payloadType": "json",
+        "x": 300,
+        "y": 360,
+        "wires": [
+            [
+                "083d24a70685558b"
+            ]
+        ]
+    }
+]
