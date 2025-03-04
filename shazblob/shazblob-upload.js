@@ -14,9 +14,6 @@ module.exports = function(RED) {
         } else {
             this.error('Missing config setting');
         }
-
-
-
         const credential = new ClientSecretCredential(
             this.config.azure_tenant_id,
             this.config.azure_client_id,
@@ -36,11 +33,26 @@ module.exports = function(RED) {
                 containerName: msg.containerName || config.containerName
             };
             try {
-                const containerName = msg.containerName || options.containerName;
-                const blobeName = msg.blobName || options.blobName;
-                const imageContent = msg.buffer || options.buffer; 
-                await uploadBlob( containerName, blobeName, imageContent);
-                msg.payload = res;
+
+                console.log( `====MSG  containerName: ${msg.containerName}  blobName: ${msg.blobName}` )
+                console.log( `====OPTS containerName: ${options.containerName}  blobName: ${options.blobName}` )
+                const containerName = options.containerName;
+                const blobName =  options.blobName;
+                const imageContent = options.buffer; 
+                
+                // Get a reference to a container
+                const containerClient = blobServiceClient.getContainerClient(containerName);
+      
+                // Create the container if it does not exist
+                await containerClient.createIfNotExists();
+      
+                // Get a block blob client
+                 const blockBlobClient = containerClient.getBlockBlobClient(blobName);
+      
+                // Upload data to the blob
+                const uploadBlobResponse = await blockBlobClient.upload( imageContent,  imageContent.length);
+                console.log(`Blob was uploaded successfully. requestId: ${uploadBlobResponse.requestId}`);
+                msg.payload = uploadBlobResponse.requestId;
                 this.send(msg);
             } catch(e) {
                 // Clear status in the node
@@ -51,5 +63,6 @@ module.exports = function(RED) {
         });
     }
 
-    RED.nodes.registerType("shazblobstorage-upload", ShAzureBlobStorageUpload);
+    RED.nodes.registerType("shazbstorage-upload", ShAzureBlobStorageUpload);
+
 }

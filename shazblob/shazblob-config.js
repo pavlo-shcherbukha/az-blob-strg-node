@@ -9,7 +9,7 @@
         this.azure_storage_account_name = config.azure_storage_account_name;
 	}
 
-	RED.nodes.registerType("shazblobstorage-config", ShAzureBlobStorageConfigNode)
+	RED.nodes.registerType("shazbstorage-config", ShAzureBlobStorageConfigNode)
 
     
 }
