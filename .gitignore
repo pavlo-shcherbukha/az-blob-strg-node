@@ -1,0 +1,17 @@
+node_modules
+node_modules_linux
+vcap-local.js
+credentials.json
+localdev-config.json
+*.log
+old
+logs
+.config.nodes.json
+.config.runtime.json
+.config.users.json
+.config.users.json.backup
+*.backup
+example1
+az_test01.js
+az_test02.js
+.env
