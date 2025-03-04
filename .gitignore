@@ -14,3 +14,4 @@ logs
 example1
 az_test01.js
 az_test02.js
+.env
