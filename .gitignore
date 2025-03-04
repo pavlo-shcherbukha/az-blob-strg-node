@@ -11,11 +11,6 @@ logs
 .config.users.json
 .config.users.json.backup
 *.backup
-
-
-#openshift/crt-secret.cmd 
-#openshift/login.cmd 
-#openshift/secret-github-basicauth.yaml 
-
-openshift/cred/secret-github-basicauth.yaml
-openshift/cred/login.cmd 
+example1
+az_test01.js
+az_test02.js

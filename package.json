@@ -4,11 +4,12 @@
   "description": "testing nodre red development and deployment on openshift",
   "main": "index.js",
   "scripts": {
-    "dev": "node  node_modules/node-red/red.js --settings ./dev/settings.js --userDir .  --port 1880 --verbose test_01.json"
+    "dev": "node  node_modules/node-red/red.js --settings ./dev/settings.js --userDir .  --port 1880 --verbose testaznode_01.json"
   },
   "author": "psh",
   "license": "ISC",
   "dependencies": {
-    "node-red": "^4.0.9"
+    "node-red": "^4.0.9",
+    "shazblob": "file:shazblob"
   }
 }

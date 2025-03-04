@@ -8,7 +8,8 @@
   },
   "node-red": {
     "nodes": {
-      "shazblob": "shazblob.js"
+      "shazblob-config": "shazblob-config.js",
+      "shazblob-upload": "shazblob-upload.js"
     }
   },
   "author": "pasha",
