@@ -1,1 +1,1 @@
-# az-blob-strg-node
+# az-blob-strg-node   Upoad buffer into azure blob storage with service Prinsipal auth
