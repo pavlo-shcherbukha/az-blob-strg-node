@@ -52,7 +52,10 @@ module.exports = function(RED) {
                 // Upload data to the blob
                 const uploadBlobResponse = await blockBlobClient.upload( imageContent,  imageContent.length);
                 console.log(`Blob was uploaded successfully. requestId: ${uploadBlobResponse.requestId}`);
-                msg.payload = uploadBlobResponse.requestId;
+                msg.payload = {}
+                msg.payload.requestId = uploadBlobResponse.requestId;
+                msg.payload.ok = true;
+                msg.payload.blobName = blobName;
                 this.send(msg);
             } catch(e) {
                 // Clear status in the node
